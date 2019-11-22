@@ -16,3 +16,8 @@ https://zhuanlan.zhihu.com/p/27628685
 
 ## 阻塞非阻塞和同步非同步的问题？
 https://www.zhihu.com/question/19732473
+
+## 为什么nodejs专为数据密集型实时程序设计？
+
+
+
