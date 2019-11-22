@@ -13,3 +13,6 @@ https://cnodejs.org/topic/4f50dd9798766f5a610b808a
 https://zhuanlan.zhihu.com/p/27628685
 
 ## npm install -g 安装模块到哪去了
+
+## 阻塞非阻塞和同步非同步的问题？
+https://www.zhihu.com/question/19732473
