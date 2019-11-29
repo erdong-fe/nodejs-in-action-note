@@ -1,0 +1,16 @@
+.app {
+  width: 800px;
+  margin: 0 auto;
+}
+.messages-list {
+  height: 400px;
+  border: 1px solid #ccc;
+}
+.message-input {
+  display: flex;
+}
+.input {
+  flex-grow: 1;
+}
+.send {
+}
