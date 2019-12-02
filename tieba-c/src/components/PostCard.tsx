@@ -1,21 +1,21 @@
 import React from 'react';
 
-interface post {
+interface Post {
   content: string,
   // author: object,
-  createAt: string
+  createdAt: string
 }
-const PostCard:React.FC = (post) => {
+const PostCard:React.FC<Post> = (props: Post) => {
   return (
     <div className="post-card">
       <div className="post-data">
-        {post.createAt}
+        {props.createdAt}
       </div>
       <div className="post-content">
-        {post.content}
+        {props.content}
       </div>
     </div>
-  )
+  ) 
 }
 
 export default PostCard;
