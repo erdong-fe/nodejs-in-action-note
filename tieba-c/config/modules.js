@@ -73,6 +73,8 @@ function getWebpackAliases(options = {}) {
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
       src: paths.appSrc,
+      api: path.api,
+      components: path.components
     };
   }
 }
