@@ -27,10 +27,17 @@ const createPost = async (req: Request, res: Response, next: NextFunction) => {
 
 const getAllPosts = async (req: Request, res: Response,
  next: NextFunction) => {
-  console.log(Post);
   try {
     const posts = await Post.find();
-    res.send(posts).end();
+    const postsToSend = posts.map(post => {
+      return {
+        content: post.content,
+        createdAt: post.createdAt,
+        id: post._id,
+        userId: post.userId,
+      }
+    })
+    res.send(postsToSend).end();
   } catch (error) {
     res.status(500).send(error.msg).end();
   }
