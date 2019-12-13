@@ -1,0 +1,41 @@
+.app {
+  font-family: Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  .topbar-wrapper {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+  }
+  .content-wrapper {
+    margin-top: 50px;
+    padding: 24px 0px;
+    overflow-x: auto;
+    min-height: calc(100% - 50px);
+    // min-height: 680px;
+  }
+  .content {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    .sidebar-wrapper {
+      width: 150px;
+    }
+    .main {
+      flex-grow: 1;
+      display: flex;
+      .main-feeds {
+        width: 600px;
+        .post-card-wrapper {
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .main-right {
+        flex-grow: 1;
+      }
+    }
+  }
+}

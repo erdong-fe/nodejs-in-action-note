@@ -1,0 +1,52 @@
+.post-card {
+  .post-data {
+    padding: 20px 20px 4px;
+    display: flex;
+    .avatar-wrapper {
+      width: 60px;
+    }
+    .detail {
+      .name-wrapper {
+        margin-bottom: 7px;
+        padding-top: 5px;
+        .name {
+          color: #333;
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+      .created-at {
+        color: #808080;
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      .post-content {
+        padding: 1px 0 3px;
+        overflow: hidden;
+        line-height: 23px;
+        word-wrap: break-word;
+      }
+    }
+  }
+  .post-operate {
+    height: 39px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #f2f2f5;
+    .operate-item  {
+      height: 22px;
+      line-height: 22px;
+      flex-grow: 1;
+      text-align: center;
+      color: #808080;
+      font-size: 12px;
+      cursor: pointer;
+      &:hover {
+        color: #409ef0;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid #d9d9d9;
+      }
+    }
+  }
+}

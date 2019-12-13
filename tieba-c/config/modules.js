@@ -69,12 +69,12 @@ function getWebpackAliases(options = {}) {
   }
 
   const baseUrlResolved = path.resolve(paths.appPath, baseUrl);
-
+  
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
       src: paths.appSrc,
-      api: path.api,
-      components: path.components
+      api: paths.api,
+      components: paths.components
     };
   }
 }
@@ -131,7 +131,7 @@ function getModules() {
   const options = config.compilerOptions || {};
 
   const additionalModulePaths = getAdditionalModulePaths(options);
-
+  
   return {
     additionalModulePaths: additionalModulePaths,
     webpackAliases: getWebpackAliases(options),

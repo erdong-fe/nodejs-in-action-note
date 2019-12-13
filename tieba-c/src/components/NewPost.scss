@@ -1,0 +1,29 @@
+.new-post {
+  background: #fff;
+  padding: 15px 10px 10px;
+  .input-wrapper {
+    &.active {
+      border-color: #409eff;
+      box-shadow: none;
+    }
+    padding: 5px;
+    border: 1px solid #cccccc;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15) inset;
+    textarea {
+      outline: none;
+      width: 100%;
+      height: 68px;
+      line-height: 18px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      font-size: 14px;
+      border: none;
+      resize: none;
+    }
+  }
+  .operate-wrapper {
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
