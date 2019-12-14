@@ -12,7 +12,7 @@ const createPost = async (req: Request, res: Response, next: NextFunction) => {
   const post = new Post(
     {
       content: req.body.content,
-      userId: 'czg'
+      userId: 'czg',
     }
   );
   post.save(
@@ -28,7 +28,7 @@ const createPost = async (req: Request, res: Response, next: NextFunction) => {
 const getAllPosts = async (req: Request, res: Response,
  next: NextFunction) => {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find().sort({createdAt: -1});
     const postsToSend = posts.map(post => {
       return {
         content: post.content,
