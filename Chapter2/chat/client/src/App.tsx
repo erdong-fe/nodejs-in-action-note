@@ -2,17 +2,23 @@ import React from 'react';
 import './App.css';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000');
+const socket = io('http://localhost:9090');
 
-class App extends React.Component<{}> {
-  constructor(props) {
+type AppState = {
+  message: string
+}
+
+class App extends React.Component<{}, AppState> {
+  constructor(props: Object) {
     super(props);
     this.state = {
       message: '',
-    }
+    };
+    this.handleMessageInput = this.handleMessageInput.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
   }
 
-  handleMessageInput(e) {
+  handleMessageInput(e: any) {
     this.setState(
       {message: e.target.value}
     );
@@ -20,6 +26,8 @@ class App extends React.Component<{}> {
 
   sendMessage() {
     // io.emit()
+    socket.emit('chat-message', this.state.message);
+    this.setState({message: ''});
   }
   
   render() {
@@ -33,11 +41,19 @@ class App extends React.Component<{}> {
           <input 
             type="textarea"
             value={this.state.message}
+<<<<<<< HEAD
+            onChange={this.handleMessageInput}
+=======
+>>>>>>> master
 
             className="input"/>
           <button 
             className="send"
+<<<<<<< HEAD
+            onClick={this.sendMessage}>发送</button>
+=======
             onClick={}>发送</button>
+>>>>>>> master
         </div>
       </div>
     )
