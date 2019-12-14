@@ -41,12 +41,19 @@ class App extends React.Component<{}, AppState> {
           <input 
             type="textarea"
             value={this.state.message}
+<<<<<<< HEAD
             onChange={this.handleMessageInput}
+=======
+>>>>>>> master
 
             className="input"/>
           <button 
             className="send"
+<<<<<<< HEAD
             onClick={this.sendMessage}>发送</button>
+=======
+            onClick={}>发送</button>
+>>>>>>> master
         </div>
       </div>
     )
