@@ -1,13 +1,19 @@
 import React from 'react';
 import './NewPost.scss';
 import Button from './common/Button';
-
+import { createPost } from 'src/api/post';
 interface State {
   content: string;
   inputWrapperClass: string;
 }
 
-class NewPost extends React.Component<{}, State> {
+interface getAllPosts {
+  (): void
+}
+interface Props {
+  onCreatedSuccessfully?: getAllPosts
+}
+class NewPost extends React.Component<Props, State> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -17,6 +23,24 @@ class NewPost extends React.Component<{}, State> {
     this.handleInput = this.handleInput.bind(this);
     this.handleInputFoucs = this.handleInputFoucs.bind(this);
     this.handleInputBlur = this.handleInputBlur.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  async handleSubmit() {
+    const params = {
+      content: this.state.content,
+      userId: 'czg'
+    };
+    try {
+      await createPost(params);
+      this.setState({
+        content: ''
+      });
+      if (this.props.onCreatedSuccessfully) {
+        this.props.onCreatedSuccessfully();
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
   handleInput(e: React.FormEvent<HTMLTextAreaElement>) {
     this.setState({
@@ -55,7 +79,9 @@ class NewPost extends React.Component<{}, State> {
             onBlur={this.handleInputBlur}/>
         </div>
         <div className="operate-wrapper">
-          <Button/>
+          <Button onClick={this.handleSubmit}>
+            发表
+          </Button>
         </div>
       </div>
     )

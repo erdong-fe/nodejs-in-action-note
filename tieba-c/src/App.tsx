@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import PostCard from './components/PostCard';
-import { createPost, getPostList } from 'src/api/post';
+import { getPostList } from 'src/api/post';
 import post from 'src/types/post';
 import Sidebar from 'src/components/Sidebar';
 import NewPost from 'src/components/NewPost';
@@ -16,6 +16,7 @@ class App extends React.Component<{}, AppState> {
     this.state = {
       postList:[],
     }
+    this._getPostList = this._getPostList.bind(this);
     this._getPostList();
   }
 
@@ -52,7 +53,8 @@ class App extends React.Component<{}, AppState> {
             <div className="main">
               <div className="main-feeds">
                 <div className="post-card-wrapper">
-                  <NewPost />
+                  <NewPost 
+                    onCreatedSuccessfully={this._getPostList} />
                 </div>
                 {postListToShow}
               </div>
