@@ -5,6 +5,6 @@ export interface toCreate {
 export interface toShow {
   content: string,
   userId: string,
-  createdAt: string,
+  createdAt: number,
   id: string
 }

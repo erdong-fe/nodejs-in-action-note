@@ -1,11 +1,15 @@
 import React from 'react';
+import { formatTimeFrom } from 'src/utils/time';
 import './PostCard.scss';
 interface Post {
   content: string,
   // author: object,
-  createdAt: string
+  createdAt: number
 }
 const PostCard:React.FC<Post> = (props: Post) => {
+  const oneHour = 3600000;
+  console.log(props.createdAt);
+  
   return (
     <div className="post-card card-panel">
       <div className="post-data">
@@ -18,7 +22,7 @@ const PostCard:React.FC<Post> = (props: Post) => {
             </span>
           </div>
           <div className="created-at">
-            {props.createdAt}
+            {formatTimeFrom(props.createdAt, oneHour)}
           </div>
           <div className="post-content">
             {props.content}
