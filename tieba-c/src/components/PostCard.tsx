@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatTimeFrom } from 'src/utils/time';
+import {formatTimeFrom} from 'src/utils/time';
 import './PostCard.scss';
 interface Post {
   content: string,
@@ -8,8 +8,6 @@ interface Post {
 }
 const PostCard:React.FC<Post> = (props: Post) => {
   const oneHour = 3600000;
-  console.log(props.createdAt);
-  
   return (
     <div className="post-card card-panel">
       <div className="post-data">

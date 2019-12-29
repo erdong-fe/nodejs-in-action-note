@@ -1,6 +1,7 @@
-const oneDay = 86400000;  // 一天的毫秒数
-const oneHour = 3600000;  // 一小时的毫秒数
+// const oneDay = 86400000; // 一天的毫秒数
+const oneHour = 3600000; // 一小时的毫秒数
 const oneMin = 60000; // 一分钟的毫秒数
+
 /**
  * 从某个时间间距interval开始算，会出现类似10分钟前，30分钟前等等
  * @param stamp 要计算的时间戳，毫秒
