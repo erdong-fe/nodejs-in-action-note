@@ -32,7 +32,7 @@ const getAllPosts = async (req: Request, res: Response,
     const postsToSend = posts.map(post => {
       return {
         content: post.content,
-        createdAt: post.createdAt,
+        createdAt: +new Date(post.createdAt),
         id: post._id,
         userId: post.userId,
       }

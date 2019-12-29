@@ -4,7 +4,6 @@
 http://cizixs.com/2016/12/12/restful-api-design-guide
 https://developer.github.com/v3/
 
-## 帖子
 
 ### 帖子
 #### 发帖
@@ -27,8 +26,11 @@ https://developer.github.com/v3/
 <b>response:</b>
 > Status: 200 OK
 > [
+    // 默认按创建时间倒序返回
 >   {
 >     id: string required
 >     content: string  required
+      createdAt: number timestamp  required
+      userId: string required
 >   }
 > ]
